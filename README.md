@@ -64,7 +64,7 @@ class { '::mdadm':
 class { '::mdadm':
   config_file_manage  => true,
   config_file_options => {},
-  force_service       => false,
+  service_force       => false,
   service_ensure      => 'running',
   service_enable      => true,
   raid_check_manage   => true
@@ -89,7 +89,7 @@ Currently, `mailaddr` is the only supported key. Example:
   config_file_options => { 'mailaddr' => 'root' },
 ```
 
-##### `force_service`
+##### `service_force`
 
 `Bool`  defaults to `false`
 
