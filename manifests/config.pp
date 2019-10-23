@@ -20,5 +20,12 @@ class mdadm::config(
       context => '/files/etc/mdadm.conf',
       changes => "set mailaddr/value '${mailaddr}'",
     }
+
+    augeas { 'mdadm mdadm.conf mailaddr':
+      incl    => '/etc/mdadm/mdadm.conf',
+      lens    => 'Mdadm_conf.lns',
+      context => '/files/etc/mdadm/mdadm.conf',
+      changes => "set mailaddr/value '${mailaddr}'",
+    }
   }
 }
